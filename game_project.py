@@ -18,11 +18,11 @@ wn.bgcolor("black")
 
 spot.showturtle()
 spot.shape("circle")
-spot.shapesize(2)
 spot.color("red")
 spot.speed(0)
 score = 0
 
+size = [.7, .9, 1.1, 1.3, 1.5, 1.7, 1.9, 2.1, 2.3, 2.5, 2.7, 2.9]
 
 def clicked(x, y):
     global score
@@ -38,6 +38,8 @@ def clicked(x, y):
     score_writer.write("Score: ", font=font_setup)
     score_writer.goto(-200, 200)
     score_writer.write(score, font = font_setup)
+    size_random = rand.randint(0, 11)
+    spot.shapesize(size[size_random])
     
 spot.onclick(clicked)
 
